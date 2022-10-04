@@ -22,6 +22,8 @@ public class BookService {
             System.out.println("0 - exit");
             System.out.println("1 - Insert new book");
             System.out.println("2 - Update book");
+            System.out.println("3 - Visualize books list");
+            System.out.println("4 - Delete Book");
             int opt = sc.nextInt();
             switch (opt) {
                 case 1 -> {
@@ -32,6 +34,14 @@ public class BookService {
                     update(sc);
                     break;
                 }
+                case 3 -> {
+                    bookRepository.findAll().forEach(System.out::println);
+                    break;
+                }
+                case 4 -> {
+                    delete(sc);
+                    break;
+                }
                 default -> {
                     System.out.println("Exiting system");
                     system = false;
@@ -40,6 +50,13 @@ public class BookService {
             }
         }
     }
+
+    private void delete(Scanner sc) {
+        System.out.println("Insert the id of the book");
+        int id = sc.nextInt();
+        bookRepository.deleteById(id);
+    }
+
     public void insert(Scanner sc){
         System.out.println("Name of the book: ");
         String bookName = sc.next();
