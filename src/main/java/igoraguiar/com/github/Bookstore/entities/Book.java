@@ -15,6 +15,11 @@ public class Book {
     public Book() {
     }
 
+    public Book(String bookName, Integer numberOfPages) {
+        this.numberOfPages = numberOfPages;
+        this.title = bookName;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -37,5 +42,14 @@ public class Book {
 
     public void setNumberOfPages(int numberOfPages) {
         this.numberOfPages = numberOfPages;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", numberOfPages=" + numberOfPages +
+                '}';
     }
 }
