@@ -12,12 +12,21 @@ public class Book {
     private String title;
     private Integer numberOfPages;
 
+    @ManyToOne
+    private Author author;
+
     public Book() {
     }
 
     public Book(String bookName, Integer numberOfPages) {
         this.numberOfPages = numberOfPages;
         this.title = bookName;
+    }
+
+    public Book(String title, Integer numberOfPages, Author author) {
+        this.title = title;
+        this.numberOfPages = numberOfPages;
+        this.author = author;
     }
 
     public Integer getId() {
@@ -42,6 +51,14 @@ public class Book {
 
     public void setNumberOfPages(int numberOfPages) {
         this.numberOfPages = numberOfPages;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 
     @Override

@@ -2,6 +2,7 @@ package igoraguiar.com.github.Bookstore;
 
 import igoraguiar.com.github.Bookstore.entities.Book;
 import igoraguiar.com.github.Bookstore.repository.BookRepository;
+import igoraguiar.com.github.Bookstore.service.AuthorService;
 import igoraguiar.com.github.Bookstore.service.BookService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -12,10 +13,12 @@ import java.util.Scanner;
 @SpringBootApplication
 public class BookstoreApplication implements CommandLineRunner {
 	private final BookService bookService;
+	private final AuthorService authorService;
 	private boolean system = true;
 
-	public BookstoreApplication(BookService bookService) {
+	public BookstoreApplication(BookService bookService, AuthorService authorService) {
 		this.bookService = bookService;
+		this.authorService = authorService;
 	}
 
 	public static void main(String[] args) {
@@ -30,7 +33,7 @@ public class BookstoreApplication implements CommandLineRunner {
 			System.out.println("Select the option: ");
 			System.out.println("0 - Exit");
 			System.out.println("1 - Book");
-			System.out.println();
+			System.out.println("2 - Author");
 			option = sc.nextInt();
 
 			switch (option) {
@@ -39,6 +42,7 @@ public class BookstoreApplication implements CommandLineRunner {
 					break;
 				}
 				case 2 -> {
+					authorService.initialize(sc);
 					break;
 				}
 				default -> {
