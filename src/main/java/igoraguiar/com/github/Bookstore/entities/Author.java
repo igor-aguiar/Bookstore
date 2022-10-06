@@ -11,7 +11,7 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Book> books = new ArrayList<>();
 
     public Author() {
@@ -53,10 +53,20 @@ public class Author {
 
     @Override
     public String toString() {
+        authorBooks();
         return "Author{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", books=" + books +
                 '}';
+    }
+
+    public void authorBooks(){
+        if (books.isEmpty()){
+            System.out.println("No books registered of this author");
+        } else {
+            StringBuilder sb = new StringBuilder();
+            books.forEach(book -> sb.append(book).append("\n"));
+            System.out.println(sb.toString());
+        }
     }
 }
