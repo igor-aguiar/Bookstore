@@ -1,7 +1,5 @@
 package igoraguiar.com.github.Bookstore;
 
-import igoraguiar.com.github.Bookstore.entities.Book;
-import igoraguiar.com.github.Bookstore.repository.BookRepository;
 import igoraguiar.com.github.Bookstore.service.AuthorService;
 import igoraguiar.com.github.Bookstore.service.BookService;
 import org.springframework.boot.CommandLineRunner;

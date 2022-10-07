@@ -1,6 +1,6 @@
 package igoraguiar.com.github.Bookstore.service;
 
-import igoraguiar.com.github.Bookstore.entities.Author;
+import igoraguiar.com.github.Bookstore.model.Author;
 import igoraguiar.com.github.Bookstore.repository.AuthorRepository;
 import org.springframework.stereotype.Service;
 

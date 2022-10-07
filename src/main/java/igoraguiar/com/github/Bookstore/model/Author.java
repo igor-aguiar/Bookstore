@@ -1,4 +1,4 @@
-package igoraguiar.com.github.Bookstore.entities;
+package igoraguiar.com.github.Bookstore.model;
 
 import javax.persistence.*;
 import java.util.ArrayList;
