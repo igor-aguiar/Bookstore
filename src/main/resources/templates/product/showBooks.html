@@ -8,11 +8,14 @@
 </head>
 <body>
 <div class="container">
-    <div th:each="book : ${books}">
+    <div>
+        <a href="form">Cadastrar Livro</a>
+        <a href="../author/form">Cadastrar Author</a>
+    </div>
         <div>
-            <h1>Cadastro de livro</h1>
-            <h4>Preencha os campos com os dados para registrar um novo livro</h4>
+            <h1>Livros Cadastrados</h1>
         </div>
+    <div th:each="book : ${books}">
         <div class="form-group col-4">
             <p>Titulo</p>
             <p th:text="${book.title}">title</p>

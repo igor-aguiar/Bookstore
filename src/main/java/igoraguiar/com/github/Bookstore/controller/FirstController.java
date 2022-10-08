@@ -25,7 +25,7 @@ public class FirstController {
     @GetMapping("/book/list")
     public ModelAndView recordBook(Model model){
         List<Book> books = (List<Book>) bookRepository.findAll();
-        ModelAndView mv = new ModelAndView("produto/showBooks");
+        ModelAndView mv = new ModelAndView("product/showBooks");
         mv.addObject("books", books);
         return mv;
     }
