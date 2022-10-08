@@ -15,10 +15,9 @@
         </div>
         <div class="form-group col-4">
             <p>Titulo</p>
-            <input th:value="${book.title}" class="form-control" name="title" type="text">
+            <p th:text="${book.title}">title</p>
             <p>Numero de páginas</p>
-            <input th:value="${book.numberOfPages}" class="form-control" name="numberOfPages" type="number">
-            <button type="submit" class="btn btn-primary mt-2">Enviar</button>
+            <p th:text="${book.numberOfPages}">number of pages</p>
         </div>
     </div>
 </div>
